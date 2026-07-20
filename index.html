@@ -1,346 +1,840 @@
-<!doctype html>
-<html lang="en-SG">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Netfix Solutions | Industrial Vendor Sourcing & RFQ Support Singapore</title>
-  <meta name="description" content="Netfix Solutions helps Singapore businesses source suitable industrial vendors, coordinate RFQs, compare quotations and support project delivery across marine, facilities, warehouses and manufacturing.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#061b3b">
-  <link rel="canonical" href="https://netfixsolutions.sg/">
-  <link rel="icon" type="image/png" href="netfix-solutions-logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Netfix Solutions helps businesses in Singapore source suitable industrial vendors, coordinate RFQs and compare quotations through one point of contact." />
+  <meta name="keywords" content="industrial vendor sourcing Singapore, RFQ coordination, quotation comparison, procurement support, facilities vendors, marine vendors" />
+  <meta name="author" content="Netfix Solutions" />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="icon" type="image/png" href="assets/favicon-64.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="preload" as="image" href="assets/netfix-logo.webp" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_SG">
-  <meta property="og:site_name" content="Netfix Solutions">
-  <meta property="og:title" content="Netfix Solutions — Connecting the Right Partners">
-  <meta property="og:description" content="Industrial vendor sourcing, RFQ support, quotation comparison and project coordination in Singapore.">
-  <meta property="og:url" content="https://netfixsolutions.sg/">
-  <meta property="og:image" content="https://netfixsolutions.sg/netfix-solutions-logo.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Netfix Solutions | Connecting the Right Partners" />
+  <meta property="og:description" content="Industrial vendor sourcing, RFQ coordination and procurement support in Singapore." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://netfixsolutions.sg/" />
+
+  <title>Netfix Solutions | Industrial Sourcing & Procurement Support</title>
+
+  <style>
+    :root {
+      --navy: #07111f;
+      --navy-2: #0b1b30;
+      --blue: #0b3b75;
+      --blue-2: #2c67a8;
+      --orange: #ff7300;
+      --ink: #172033;
+      --muted: #647084;
+      --line: #dfe5ee;
+      --soft: #f4f7fb;
+      --white: #ffffff;
+      --success: #17a673;
+      --shadow: 0 20px 55px rgba(7, 17, 31, 0.12);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.65;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--orange));
+    }
+    h1, h2, h3 { line-height: 1.1; margin-top: 0; }
+    h1 { font-size: clamp(2.5rem, 6vw, 5.7rem); letter-spacing: -0.05em; }
+    h2 { font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -0.035em; }
+    h3 { font-size: 1.28rem; }
+    p { margin-top: 0; }
+    .lead { font-size: 1.12rem; color: var(--muted); max-width: 720px; }
+    .section { padding: 100px 0; }
+    .section-soft { background: var(--soft); }
+    .section-dark {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(39, 210, 255, .13), transparent 28%),
+        radial-gradient(circle at 10% 90%, rgba(31, 111, 255, .18), transparent 30%),
+        var(--navy);
+      color: var(--white);
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      transition: .25s ease;
+    }
+    .header.scrolled {
+      background: rgba(7, 17, 31, .92);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 35px rgba(0,0,0,.15);
+    }
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      color: white;
+      min-width: 210px;
+    }
+    .brand-logo {
+      display: block;
+      width: 240px;
+      max-width: 30vw;
+      height: auto;
+      background: rgba(255,255,255,.96);
+      border-radius: 12px;
+      padding: 7px 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.14);
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--orange));
+      box-shadow: 0 8px 25px rgba(255,115,0,.34);
+      font-weight: 950;
+      color: white;
+    }
+    .brand small { display: block; font-size: .65rem; color: #9fb0c7; letter-spacing: .12em; font-weight: 700; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #dce6f3;
+      font-size: .92rem;
+      font-weight: 650;
+    }
+    .nav-links a:hover { color: white; }
+    .menu-btn {
+      display: none;
+      background: transparent;
+      color: white;
+      border: 0;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 21px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--orange), #ff9345);
+      box-shadow: 0 14px 30px rgba(255,115,0,.25);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 35px rgba(255,115,0,.34); }
+    .btn-outline {
+      color: white;
+      border-color: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.04);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+    .btn-light {
+      background: white;
+      color: var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 840px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(7,17,31,.98) 0%, rgba(7,17,31,.91) 47%, rgba(7,17,31,.56) 100%),
+        radial-gradient(circle at 83% 22%, rgba(39,210,255,.25), transparent 28%),
+        linear-gradient(135deg, #07111f 0%, #0b2140 50%, #0e3158 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding-top: 92px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 60px;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, #ffffff, #7aaee6 60%, #ff9a3d);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero p { color: #b8c5d7; max-width: 660px; font-size: 1.14rem; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .trust-pill {
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.055);
+      border-radius: 999px;
+      padding: 9px 14px;
+      color: #d8e2ef;
+      font-size: .82rem;
+    }
+    .hero-panel {
+      position: relative;
+      padding: 30px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.055));
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 30px 80px rgba(0,0,0,.26);
+      backdrop-filter: blur(14px);
+    }
+    .panel-label { color: #94a8c3; font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; }
+    .panel-title { margin: 8px 0 22px; font-size: 1.7rem; }
+    .mini-flow { display: grid; gap: 12px; }
+    .mini-step {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px;
+      border-radius: 15px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .mini-step b {
+      width: 34px; height: 34px; border-radius: 10px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--orange));
+      flex: none;
+    }
+    .mini-step span { color: #d7e2ef; font-size: .92rem; }
+
+    /* Cards */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 12px 35px rgba(15, 35, 65, .06);
+      transition: .22s ease;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      background: #fff1e6;
+      color: var(--orange);
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+    .card p { color: var(--muted); font-size: .95rem; }
+    .service-list {
+      padding: 0; margin: 18px 0 0; list-style: none; color: var(--muted); font-size: .9rem;
+    }
+    .service-list li { margin: 8px 0; padding-left: 18px; position: relative; }
+    .service-list li::before { content: "✓"; color: var(--success); position: absolute; left: 0; font-weight: 900; }
+
+    /* Workflow */
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 45px;
+    }
+    .step {
+      position: relative;
+      padding: 26px;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid var(--line);
+      min-height: 190px;
+    }
+    .step-no {
+      color: var(--orange);
+      font-size: .8rem;
+      letter-spacing: .15em;
+      font-weight: 900;
+    }
+    .step p { color: var(--muted); font-size: .92rem; }
+    .step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -14px; top: 50%;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      display: grid; place-items: center;
+      z-index: 2;
+      transform: translateY(-50%);
+    }
+
+    /* Comparison */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .compare-box {
+      border-radius: 24px;
+      padding: 30px;
+      background: white;
+      border: 1px solid var(--line);
+    }
+    .compare-box.highlight {
+      color: white;
+      background: linear-gradient(145deg, #0b1b30, #0f2a4d);
+      border-color: transparent;
+      box-shadow: var(--shadow);
+    }
+    .compare ul { list-style: none; padding: 0; margin: 20px 0 0; }
+    .compare li { display: flex; gap: 12px; margin: 14px 0; }
+    .compare li span { color: var(--orange); font-weight: 900; }
+
+    /* Founder */
+    .founder {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 45px;
+      align-items: stretch;
+    }
+    .founder-card {
+      min-height: 460px;
+      border-radius: 28px;
+      padding: 34px;
+      color: white;
+      background:
+        radial-gradient(circle at 80% 15%, rgba(39,210,255,.22), transparent 25%),
+        linear-gradient(155deg, #07111f, #123964);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: var(--shadow);
+    }
+    .founder-initial {
+      width: 84px; height: 84px; border-radius: 24px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--orange));
+      font-size: 2rem; font-weight: 950;
+      margin-bottom: auto;
+    }
+    .founder-card p { color: #b7c6d9; }
+    .quote {
+      font-size: 1.38rem;
+      line-height: 1.45;
+      color: var(--navy);
+      font-weight: 750;
+      padding: 24px 28px;
+      border-left: 4px solid var(--orange);
+      background: #fff4ea;
+      border-radius: 0 18px 18px 0;
+      margin-top: 26px;
+    }
+
+    /* Categories */
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .chip {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: white;
+      color: #344158;
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    /* AI Roadmap */
+    .roadmap { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 36px; }
+    .road {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.055);
+      padding: 22px;
+      border-radius: 18px;
+    }
+    .road small { color: #ff9a3d; font-weight: 800; }
+    .road h3 { margin: 10px 0; font-size: 1rem; }
+    .road p { color: #aebed2; font-size: .86rem; }
+
+    /* FAQ */
+    details {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: white;
+      padding: 0 20px;
+      margin-bottom: 12px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      padding: 20px 0;
+      list-style: none;
+    }
+    details p { color: var(--muted); padding-bottom: 20px; }
+
+    /* CTA */
+    .cta {
+      border-radius: 30px;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1.4fr .6fr;
+      align-items: center;
+      gap: 30px;
+      color: white;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(39,210,255,.32), transparent 30%),
+        linear-gradient(135deg, #0a1b31, #164a85);
+      box-shadow: var(--shadow);
+    }
+    .cta h2 { margin-bottom: 14px; }
+    .cta p { color: #c0cede; margin: 0; }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; }
+
+    /* Footer */
+    footer { background: #050c16; color: #aeb9c8; padding: 65px 0 25px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 34px; }
+    footer h4 { color: white; margin-top: 0; }
+    footer a { display: block; margin: 9px 0; }
+    footer a:hover { color: white; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      margin-top: 38px;
+      padding-top: 22px;
+      font-size: .82rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* WhatsApp */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 45;
+      width: 58px; height: 58px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      font-size: 1.55rem;
+      box-shadow: 0 12px 30px rgba(37,211,102,.35);
+      transition: .2s;
+    }
+    .whatsapp:hover { transform: translateY(-3px) scale(1.03); }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 20px; right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 18px;
+        background: rgba(7,17,31,.98);
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 18px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 8px; }
+      .menu-btn { display: block; }
+      .hero { min-height: auto; padding: 130px 0 80px; }
+      .hero-inner, .founder, .cta { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 640px; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .grid-4, .workflow { grid-template-columns: repeat(2, 1fr); }
+      .step::after { display: none !important; }
+      .roadmap { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-actions { flex-direction: row; flex-wrap: wrap; }
+    }
+
+    @media (max-width: 640px) {
+      .brand { min-width: 0; }
+      .brand-logo { width: 185px; max-width: 58vw; padding: 5px 8px; border-radius: 10px; }
+      .container { width: min(100% - 28px, var(--max)); }
+      .section { padding: 76px 0; }
+      h1 { font-size: 3rem; }
+      .grid-3, .grid-4, .workflow, .compare, .roadmap, .footer-grid { grid-template-columns: 1fr; }
+      .hero-actions, .cta-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .hero-panel { padding: 22px; }
+      .cta { padding: 34px 24px; }
+      .trust-row { gap: 8px; }
+      .trust-pill { font-size: .75rem; }
+      .founder-card { min-height: 390px; }
+    }
+  </style>
 
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"Netfix Solutions",
-    "url":"https://netfixsolutions.sg/",
-    "logo":"https://netfixsolutions.sg/netfix-solutions-logo.png",
-    "image":"https://netfixsolutions.sg/netfix-solutions-logo.png",
-    "description":"Industrial vendor sourcing, RFQ coordination, quotation comparison and project support in Singapore.",
-    "email":"admin@netfixsolutions.sg",
-    "telephone":"+6597934402",
-    "slogan":"Connecting the Right Partners.",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"18 Boon Lay Way, #06-143 TradeHub 21",
-      "addressLocality":"Singapore",
-      "postalCode":"609966",
-      "addressCountry":"SG"
-    },
-    "identifier":{
-      "@type":"PropertyValue",
-      "name":"Singapore UEN",
-      "value":"53527000C"
-    },
-    "areaServed":"Singapore"
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Netfix Solutions",
+    "url": "https://netfixsolutions.sg",
+    "email": "admin@netfixsolutions.sg",
+    "telephone": "+6597934402",
+    "identifier": "UEN 53527000C",
+    "description": "Industrial vendor sourcing, RFQ coordination, quotation comparison and procurement support in Singapore.",
+    "areaServed": "Singapore"
   }
   </script>
-
-  <style>
-    :root{
-      --navy:#061b3b; --navy2:#0a315f; --orange:#ff6b00; --orange2:#ff8a2a;
-      --ink:#17233a; --muted:#637188; --line:#dce4ee; --soft:#f5f8fc; --white:#fff;
-      --shadow:0 20px 55px rgba(6,27,59,.14); --radius:24px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,calc(100% - 38px));margin:auto}
-    .topbar{background:var(--navy);color:#e5edf7;font-size:.84rem}
-    .topbar-inner{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-    .topbar a:hover{color:#fff}
-    header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,228,238,.85)}
-    .nav{height:84px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-    .logo{width:220px;height:66px;object-fit:contain;object-position:left center}
-    .nav-links{display:flex;align-items:center;gap:27px;font-size:.92rem;font-weight:800}
-    .nav-links a:hover{color:var(--orange)}
-    .mobile-toggle{display:none;border:0;background:none;font-size:1.9rem;color:var(--navy)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 22px;border-radius:999px;font-weight:850;border:1px solid transparent;transition:.2s ease}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-orange{background:var(--orange);color:#fff;box-shadow:0 12px 30px rgba(255,107,0,.27)}
-    .btn-navy{background:var(--navy);color:#fff}
-    .btn-light{background:#fff;color:var(--navy);border-color:#cbd6e3}
-    .hero{position:relative;overflow:hidden;background:
-      radial-gradient(circle at 82% 18%,rgba(255,107,0,.25),transparent 25%),
-      linear-gradient(135deg,#05162f 0%,#0a2a51 62%,#104476 100%);color:#fff}
-    .hero:before{content:"";position:absolute;inset:0;background-image:
-      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-      background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent)}
-    .hero-inner{position:relative;z-index:2;min-height:700px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:62px;padding:80px 0}
-    .eyebrow{display:flex;align-items:center;gap:11px;color:#ffd0aa;text-transform:uppercase;letter-spacing:.14em;font-size:.77rem;font-weight:900}
-    .eyebrow:before{content:"";width:34px;height:3px;background:var(--orange);border-radius:10px}
-    h1{font-size:clamp(3.25rem,6.3vw,6.2rem);line-height:1.01;letter-spacing:-.06em;margin:18px 0 24px}
-    h1 span{color:#ff8a2a}
-    .hero-copy{font-size:1.16rem;color:#cbd8e7;max-width:730px;margin:0 0 32px}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-    .hero-panel{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);backdrop-filter:blur(13px);border-radius:30px;padding:30px;box-shadow:0 28px 80px rgba(0,0,0,.28)}
-    .hero-panel img{background:#fff;border-radius:18px;padding:12px;margin-bottom:24px}
-    .panel-row{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)}
-    .panel-row:last-child{border-bottom:0}
-    .panel-row span{color:#c5d3e3}.panel-row strong{color:#fff}
-    .trust-strip{position:relative;z-index:5;margin-top:-38px}
-    .trust-grid{background:#fff;border-radius:22px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);padding:25px}
-    .trust-item{padding:8px 22px;border-right:1px solid var(--line)}
-    .trust-item:last-child{border-right:0}
-    .trust-item strong{display:block;color:var(--navy);font-size:1.01rem}
-    .trust-item span{font-size:.86rem;color:var(--muted)}
-    section{padding:105px 0}
-    .section-head{max-width:790px;margin-bottom:48px}
-    .section-head.center{text-align:center;margin-left:auto;margin-right:auto}
-    .kicker{color:var(--orange);font-size:.77rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
-    h2{font-size:clamp(2.2rem,4.3vw,4.25rem);line-height:1.08;letter-spacing:-.045em;color:var(--navy);margin:12px 0 18px}
-    .lead{font-size:1.08rem;color:var(--muted)}
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .card{border:1px solid var(--line);border-radius:var(--radius);padding:29px;background:#fff;transition:.25s}
-    .card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:#bac9d9}
-    .icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:#fff0e5;color:var(--orange);font-size:1.4rem;font-weight:900;margin-bottom:19px}
-    .card h3{font-size:1.25rem;color:var(--navy);margin:0 0 10px}
-    .card p{color:var(--muted);margin:0}
-    .dark{background:var(--navy);color:#fff}
-    .dark h2{color:#fff}.dark .lead{color:#c6d2e0}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-    .process{display:grid;gap:14px}
-    .step{display:grid;grid-template-columns:54px 1fr;gap:18px;padding:20px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:18px}
-    .num{width:54px;height:54px;border-radius:16px;background:var(--orange);display:grid;place-items:center;font-weight:900}
-    .step h3{margin:1px 0 4px}.step p{margin:0;color:#c0cede}
-    .industry-pills{display:flex;gap:12px;flex-wrap:wrap}
-    .pill{padding:12px 18px;border:1px solid #cbd7e4;border-radius:999px;background:#fff;font-weight:800}
-    .checks{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-    .check{padding:17px 19px;background:var(--soft);border-radius:15px;font-weight:800}
-    .check:before{content:"✓";color:var(--orange);margin-right:10px;font-weight:900}
-    .future{background:linear-gradient(135deg,#f7f9fc,#edf3f8)}
-    .future-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:54px;align-items:center}
-    .future-panel{background:var(--navy);color:#fff;border-radius:28px;padding:34px;box-shadow:var(--shadow)}
-    .future-panel h3{font-size:1.55rem;margin-top:0}
-    .future-row{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)}
-    .future-row:last-child{border-bottom:0}
-    .future-row b{color:#ff9c52}
-    .vendor-client{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .action-card{border-radius:28px;padding:38px;min-height:320px;display:flex;flex-direction:column;justify-content:space-between}
-    .action-card.client{background:linear-gradient(140deg,#061b3b,#0d3b6d);color:#fff}
-    .action-card.vendor{background:linear-gradient(140deg,#fff0e5,#ffe2ca);color:var(--navy)}
-    .action-card h3{font-size:2rem;line-height:1.15;margin:0 0 12px}
-    .action-card p{font-size:1.03rem}
-    .contact{padding-top:20px}
-    .contact-box{background:linear-gradient(120deg,#071a33,#104875);border-radius:32px;padding:55px;color:#fff;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
-    .contact-box h2{color:#fff;margin-top:0}
-    .contact-box p{color:#c6d4e2}
-    .contact-list{display:grid;gap:13px}
-    .contact-list a,.contact-list div{padding:14px 17px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:14px}
-    footer{background:#031226;color:#c8d4df;padding:60px 0 28px}
-    .footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:45px}
-    .footer-grid img{width:215px;background:#fff;padding:8px;border-radius:12px}
-    footer h4{color:#fff;margin-top:0}
-    footer a{display:block;margin:8px 0}
-    footer a:hover{color:#ff9b4b}
-    .legal{border-top:1px solid rgba(255,255,255,.11);padding-top:22px;margin-top:42px;display:flex;justify-content:space-between;gap:24px;font-size:.86rem}
-    @media(max-width:940px){
-      .nav-links{display:none}.mobile-toggle{display:block}
-      .hero-inner,.split,.future-grid,.contact-box{grid-template-columns:1fr}
-      .hero-inner{min-height:auto;padding:72px 0 112px}
-      .services{grid-template-columns:1fr 1fr}.trust-grid{grid-template-columns:1fr 1fr}
-      .trust-item:nth-child(2){border-right:0}.trust-item{border-bottom:1px solid var(--line)}
-      .trust-item:nth-child(3),.trust-item:nth-child(4){border-bottom:0}
-      .footer-grid{grid-template-columns:1fr 1fr}.vendor-client{grid-template-columns:1fr}
-    }
-    @media(max-width:640px){
-      .container{width:min(100% - 26px,1180px)}
-      .topbar-inner{justify-content:center;text-align:center;padding:8px 0}
-      .nav{height:72px}.logo{width:158px;height:51px}
-      h1{font-size:3.15rem}
-      .hero-copy{font-size:1.02rem}
-      .services,.checks,.trust-grid,.footer-grid{grid-template-columns:1fr}
-      .trust-item{border-right:0!important;border-bottom:1px solid var(--line)!important}
-      .trust-item:last-child{border-bottom:0!important}
-      section{padding:78px 0}
-      .contact-box{padding:34px 24px}.legal{display:block}
-    }
-  </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>18 Boon Lay Way, #06-143 TradeHub 21, Singapore 609966</span>
-      <span><a href="mailto:admin@netfixsolutions.sg">admin@netfixsolutions.sg</a> &nbsp;•&nbsp; <a href="https://wa.me/6597934402" target="_blank" rel="noopener">+65 9793 4402</a></span>
-    </div>
-  </div>
 
-  <header>
+  <header class="header" id="header">
     <div class="container nav">
-      <a href="#home" aria-label="Netfix Solutions home"><img class="logo" src="netfix-solutions-logo.png" alt="Netfix Solutions — Connecting the Right Partners"></a>
-      <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="Netfix Solutions home">
+        <img src="assets/netfix-logo.webp" alt="Netfix Solutions — Connecting the Right Partners" class="brand-logo">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
         <a href="#services">Services</a>
-        <a href="#industries">Industries</a>
         <a href="#process">How It Works</a>
-        <a href="#future">Digital Roadmap</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn-orange" href="https://forms.gle/6rWANFNc2TdzJkvf7" target="_blank" rel="noopener">Submit an RFQ</a>
+        <a href="#industries">Industries</a>
+        <a href="#founder">Founder</a>
+        <a href="#future">Future Platform</a>
+        <a href="#contact" class="btn btn-primary">Submit an RFQ</a>
       </nav>
-      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
+  <main>
+    <section class="hero" id="home">
       <div class="container hero-inner">
         <div>
-          <div class="eyebrow">Industrial sourcing support in Singapore</div>
-          <h1>Connecting businesses with the <span>right industrial partners.</span></h1>
-          <p class="hero-copy">Netfix Solutions helps businesses source suitable vendors, coordinate RFQs, compare quotations and support projects—so procurement moves faster and decisions become clearer.</p>
+          <span class="eyebrow" style="color:#ff9a3d">Singapore Industrial Sourcing Partner</span>
+          <h1>Industrial vendor sourcing <span>made simple.</span></h1>
+          <p>Helping businesses source suitable vendors, coordinate RFQs, compare quotations and simplify procurement through one trusted partner.</p>
+
           <div class="hero-actions">
-            <a class="btn btn-orange" href="https://forms.gle/6rWANFNc2TdzJkvf7" target="_blank" rel="noopener">Request vendor sourcing</a>
-            <a class="btn btn-light" href="https://forms.gle/eLtNR5zHBTmCH3nh7" target="_blank" rel="noopener">Join as a vendor</a>
+            <a class="btn btn-primary" href="https://forms.gle/6rWANFNc2TdzJkvf7" target="_blank" rel="noopener">Submit Your RFQ →</a>
+            <a class="btn btn-outline" href="https://forms.gle/eLtNR5zHBTmCH3nh7" target="_blank" rel="noopener">Join as a Vendor</a>
+          </div>
+
+          <div class="trust-row">
+            <span class="trust-pill">✓ Singapore Registered</span>
+            <span class="trust-pill">✓ UEN 53527000C</span>
+            <span class="trust-pill">✓ Multi-industry sourcing</span>
+            <span class="trust-pill">✓ Human-led coordination</span>
           </div>
         </div>
-        <aside class="hero-panel">
-          <img src="netfix-solutions-logo.png" alt="Netfix Solutions logo">
-          <div class="panel-row"><span>Vendor sourcing</span><strong>Targeted</strong></div>
-          <div class="panel-row"><span>RFQ coordination</span><strong>Structured</strong></div>
-          <div class="panel-row"><span>Quotation comparison</span><strong>Clear</strong></div>
-          <div class="panel-row"><span>Project support</span><strong>Responsive</strong></div>
+
+        <aside class="hero-panel" aria-label="Netfix sourcing workflow">
+          <div class="panel-label">From requirement to recommendation</div>
+          <div class="panel-title">A clearer way to source vendors</div>
+          <div class="mini-flow">
+            <div class="mini-step"><b>01</b><span>You submit your requirement or RFQ.</span></div>
+            <div class="mini-step"><b>02</b><span>We review the scope and identify suitable vendors.</span></div>
+            <div class="mini-step"><b>03</b><span>Quotations are coordinated and organised.</span></div>
+            <div class="mini-step"><b>04</b><span>You evaluate and decide with full control.</span></div>
+          </div>
         </aside>
       </div>
     </section>
 
-    <div class="trust-strip">
-      <div class="container trust-grid">
-        <div class="trust-item"><strong>Singapore registered</strong><span>UEN 53527000C</span></div>
-        <div class="trust-item"><strong>One point of contact</strong><span>Simpler vendor coordination</span></div>
-        <div class="trust-item"><strong>Multi-industry sourcing</strong><span>Local and overseas options</span></div>
-        <div class="trust-item"><strong>Transparent workflow</strong><span>Better-informed decisions</span></div>
-      </div>
-    </div>
-
-    <section id="services">
+    <section class="section" id="services">
       <div class="container">
-        <div class="section-head center">
-          <div class="kicker">What we do</div>
-          <h2>Practical procurement support for real project requirements</h2>
-          <p class="lead">We help move your request from initial requirement to suitable vendor options through an organised and responsive process.</p>
-        </div>
-        <div class="services">
-          <article class="card"><div class="icon">01</div><h3>Vendor sourcing</h3><p>Identify contractors, suppliers and specialist manufacturers suited to your scope, industry and delivery needs.</p></article>
-          <article class="card"><div class="icon">02</div><h3>RFQ coordination</h3><p>Structure requirements, distribute enquiries and coordinate clarifications to help vendors quote accurately.</p></article>
-          <article class="card"><div class="icon">03</div><h3>Quotation comparison</h3><p>Organise scope, pricing, exclusions, lead time and commercial differences for easier evaluation.</p></article>
-          <article class="card"><div class="icon">04</div><h3>Project coordination</h3><p>Support communication, follow-ups and alignment between clients and vendors through sourcing and execution.</p></article>
-          <article class="card"><div class="icon">05</div><h3>Specialised sourcing</h3><p>Explore uncommon technical suppliers and manufacturers locally or internationally when standard searches fall short.</p></article>
-          <article class="card"><div class="icon">06</div><h3>Vendor network access</h3><p>Registered vendors can be contacted when suitable RFQ opportunities match their capabilities.</p></article>
+        <span class="eyebrow">What We Do</span>
+        <h2>Procurement support built around practical business needs.</h2>
+        <p class="lead">We help reduce the time and effort involved in finding vendors, gathering quotations and coordinating the early stages of industrial work.</p>
+
+        <div class="grid-3" style="margin-top:42px">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Vendor Sourcing & Matching</h3>
+            <p>We identify potential vendors based on trade, capability, project scope and industry requirements.</p>
+            <ul class="service-list">
+              <li>Local and regional sourcing</li>
+              <li>Specialist trade matching</li>
+              <li>Vendor capability screening</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>RFQ Coordination</h3>
+            <p>We help structure requirements, distribute RFQs and coordinate vendor responses through one point of contact.</p>
+            <ul class="service-list">
+              <li>Scope clarification support</li>
+              <li>RFQ distribution</li>
+              <li>Vendor follow-up</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Quotation Comparison</h3>
+            <p>We organise quotations into a clearer comparison so differences in price, scope and exclusions are easier to review.</p>
+            <ul class="service-list">
+              <li>Commercial comparison</li>
+              <li>Scope and exclusion review</li>
+              <li>Decision-support summary</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">04</div>
+            <h3>Project Coordination Support</h3>
+            <p>We support communication and coordination between clients and vendors during project preparation and execution.</p>
+            <ul class="service-list">
+              <li>Site coordination support</li>
+              <li>Progress follow-up</li>
+              <li>Communication tracking</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">05</div>
+            <h3>Specialised Sourcing</h3>
+            <p>For less common requirements, we can explore suitable manufacturers or specialist suppliers locally and overseas.</p>
+            <ul class="service-list">
+              <li>Fabrication and custom items</li>
+              <li>Marine and industrial equipment</li>
+              <li>China manufacturer sourcing</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">06</div>
+            <h3>Vendor Partnership</h3>
+            <p>We welcome capable vendors seeking relevant business opportunities and stronger connections with industrial clients.</p>
+            <ul class="service-list">
+              <li>Business opportunity matching</li>
+              <li>Capability profiling</li>
+              <li>Long-term network growth</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="dark" id="process">
-      <div class="container split">
-        <div>
-          <div class="kicker">How Netfix works</div>
-          <h2>A clearer path from requirement to vendor selection</h2>
-          <p class="lead">Netfix supports your sourcing process without replacing your internal evaluation or approval. Your company remains in control of vendor selection and appointment.</p>
-        </div>
-        <div class="process">
-          <div class="step"><div class="num">1</div><div><h3>Share your requirement</h3><p>Send your scope, drawings, photos or initial request.</p></div></div>
-          <div class="step"><div class="num">2</div><div><h3>Identify suitable vendors</h3><p>We source companies aligned with the work category and project needs.</p></div></div>
-          <div class="step"><div class="num">3</div><div><h3>Coordinate RFQs</h3><p>Requirements and technical questions are shared with suitable vendors.</p></div></div>
-          <div class="step"><div class="num">4</div><div><h3>Compare and decide</h3><p>You review the available options and appoint the partner that best fits your needs.</p></div></div>
+    <section class="section section-soft" id="process">
+      <div class="container">
+        <span class="eyebrow">How Netfix Works</span>
+        <h2>A simple, transparent sourcing process.</h2>
+        <p class="lead">You remain in control of vendor selection and approval. Netfix supports the sourcing and coordination process.</p>
+
+        <div class="workflow">
+          <article class="step">
+            <div class="step-no">STEP 01</div>
+            <h3>Submit Requirement</h3>
+            <p>Share your RFQ, work scope, specifications, timeline and relevant supporting information.</p>
+          </article>
+          <article class="step">
+            <div class="step-no">STEP 02</div>
+            <h3>Scope Review</h3>
+            <p>We review the requirement and clarify key details needed for meaningful vendor quotations.</p>
+          </article>
+          <article class="step">
+            <div class="step-no">STEP 03</div>
+            <h3>Vendor Matching</h3>
+            <p>Suitable vendors are identified and invited to review the opportunity.</p>
+          </article>
+          <article class="step">
+            <div class="step-no">STEP 04</div>
+            <h3>Quotation Review</h3>
+            <p>Responses are organised for comparison so you can evaluate and make the final decision.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="industries">
-      <div class="container split">
-        <div>
-          <div class="kicker">Industries supported</div>
-          <h2>Built around industrial, facilities and specialised requirements</h2>
-          <p class="lead">Our network can support a growing range of commercial and industrial sourcing needs.</p>
-          <div class="industry-pills">
-            <span class="pill">Marine & offshore</span><span class="pill">Shipyards</span><span class="pill">Facilities management</span>
-            <span class="pill">Warehouses</span><span class="pill">Factories</span><span class="pill">Manufacturing</span>
-            <span class="pill">Commercial buildings</span><span class="pill">Engineering services</span><span class="pill">Specialist fabrication</span>
+    <section class="section" id="industries">
+      <div class="container">
+        <span class="eyebrow">Industries & Categories</span>
+        <h2>Supporting a broad range of industrial requirements.</h2>
+        <p class="lead">Our sourcing approach can be applied across facilities, marine, logistics, manufacturing and commercial environments.</p>
+
+        <div class="grid-4" style="margin-top:42px">
+          <div class="card"><div class="icon">⚓</div><h3>Marine & Offshore</h3><p>Shipyard, vessel support, fabrication, lifting, access and specialist marine services.</p></div>
+          <div class="card"><div class="icon">🏭</div><h3>Manufacturing</h3><p>Equipment, plant services, fabrication, maintenance support and industrial supplies.</p></div>
+          <div class="card"><div class="icon">▦</div><h3>Warehousing & Logistics</h3><p>Facility improvement, racking, M&E works, safety and operational support.</p></div>
+          <div class="card"><div class="icon">⌂</div><h3>Commercial Facilities</h3><p>Building repairs, fit-out works, M&E services and contractor coordination.</p></div>
+        </div>
+
+        <div class="chips" aria-label="Vendor trade categories">
+          <span class="chip">Electrical</span><span class="chip">Mechanical</span><span class="chip">HVAC</span>
+          <span class="chip">Plumbing</span><span class="chip">Civil Works</span><span class="chip">Steel Fabrication</span>
+          <span class="chip">Painting</span><span class="chip">Waterproofing</span><span class="chip">Fire Protection</span>
+          <span class="chip">Automation</span><span class="chip">Crane & Lifting</span><span class="chip">Marine Equipment</span>
+          <span class="chip">Signage</span><span class="chip">Flooring</span><span class="chip">Specialist Manufacturers</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <span class="eyebrow">Why Netfix</span>
+        <h2>Less fragmented sourcing. Better visibility.</h2>
+        <div class="compare">
+          <div class="compare-box">
+            <h3>Without coordinated sourcing</h3>
+            <ul>
+              <li><span>×</span>Searching multiple vendors individually</li>
+              <li><span>×</span>Repeated emails and follow-ups</li>
+              <li><span>×</span>Quotations in inconsistent formats</li>
+              <li><span>×</span>Unclear differences in scope and exclusions</li>
+              <li><span>×</span>More time spent coordinating early-stage procurement</li>
+            </ul>
+          </div>
+          <div class="compare-box highlight">
+            <h3>With Netfix Solutions</h3>
+            <ul>
+              <li><span>✓</span>One point of contact for sourcing coordination</li>
+              <li><span>✓</span>Vendor matching based on actual requirements</li>
+              <li><span>✓</span>Structured RFQ and quotation coordination</li>
+              <li><span>✓</span>Clearer commercial and scope comparison</li>
+              <li><span>✓</span>You retain final approval and vendor selection</li>
+            </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="founder">
+      <div class="container founder">
+        <aside class="founder-card">
+          <div class="founder-initial">R</div>
+          <span style="color:#ff9a3d;font-weight:800">FOUNDER</span>
+          <h2 style="font-size:2.8rem;margin:8px 0">Rail</h2>
+          <p>Netfix Solutions</p>
+        </aside>
+
         <div>
-          <div class="kicker">Why choose Netfix</div>
-          <h2>Less time searching. More confidence comparing.</h2>
-          <div class="checks">
-            <div class="check">Single sourcing contact</div>
-            <div class="check">Structured RFQ coordination</div>
-            <div class="check">Broader vendor reach</div>
-            <div class="check">Clearer quotation review</div>
-            <div class="check">Flexible project support</div>
-            <div class="check">Singapore business accountability</div>
-          </div>
+          <span class="eyebrow">Meet the Founder</span>
+          <h2>Built from real industrial coordination experience.</h2>
+          <p class="lead">Netfix Solutions was founded with one clear purpose: to make industrial sourcing and procurement more efficient, transparent and practical for businesses in Singapore.</p>
+          <p>Through his experience in facilities and project coordination, Rail saw how much time companies can spend identifying suitable vendors, gathering quotations and managing communication across multiple parties.</p>
+          <p>He established Netfix Solutions to provide a more coordinated approach—helping businesses connect with suitable partners, structure RFQs and review quotations while retaining control over their final procurement decisions.</p>
+          <p>Rail's long-term vision is to develop Netfix Solutions into a technology-enabled procurement ecosystem supported by AI-assisted vendor matching, quotation comparison and workflow tools.</p>
+
+          <div class="quote">“We do not just find vendors. We help businesses connect with the right partners for the right requirement.”</div>
         </div>
       </div>
     </section>
 
-    <section class="future" id="future">
-      <div class="container future-grid">
-        <div>
-          <div class="kicker">Future-ready procurement</div>
-          <h2>Building smarter tools around the sourcing process</h2>
-          <p class="lead">Netfix is developing toward a digital workflow that can help businesses prepare RFQs, identify suitable vendors and compare quotation details more efficiently.</p>
-          <p><strong>Our approach:</strong> begin with practical human-led support, validate real client needs and introduce technology where it creates genuine value.</p>
-        </div>
-        <div class="future-panel">
-          <h3>Planned digital capabilities</h3>
-          <div class="future-row"><b>01</b><span>AI-assisted RFQ preparation</span></div>
-          <div class="future-row"><b>02</b><span>Vendor capability matching</span></div>
-          <div class="future-row"><b>03</b><span>PDF quotation extraction and comparison</span></div>
-          <div class="future-row"><b>04</b><span>RFQ, vendor and project dashboard</span></div>
+    <section class="section section-dark" id="future">
+      <div class="container">
+        <span class="eyebrow" style="color:#ff9a3d">Future Platform</span>
+        <h2>Building toward smarter industrial procurement.</h2>
+        <p class="lead" style="color:#aebed2">These technology capabilities form the long-term development roadmap for Netfix Solutions and are not yet represented as fully launched services.</p>
+
+        <div class="roadmap">
+          <article class="road"><small>01</small><h3>AI RFQ Builder</h3><p>Assist users in turning requirements into clearer RFQ documents.</p></article>
+          <article class="road"><small>02</small><h3>Vendor Matching</h3><p>Recommend vendors based on capability, category and project needs.</p></article>
+          <article class="road"><small>03</small><h3>Quotation Comparison</h3><p>Extract and organise information from supplier quotations.</p></article>
+          <article class="road"><small>04</small><h3>Project Dashboard</h3><p>Centralise RFQ status, actions, quotations and follow-ups.</p></article>
+          <article class="road"><small>05</small><h3>Procurement Analytics</h3><p>Provide clearer visibility into sourcing activity and commercial trends.</p></article>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container vendor-client">
-        <article class="action-card client">
+    <section class="section section-soft" id="faq">
+      <div class="container" style="max-width:900px">
+        <span class="eyebrow">Frequently Asked Questions</span>
+        <h2>What businesses usually want to know.</h2>
+
+        <div style="margin-top:36px">
+          <details>
+            <summary>Does Netfix Solutions award the project?</summary>
+            <p>No. The client retains control of vendor evaluation, approval, purchase order placement and final award.</p>
+          </details>
+          <details>
+            <summary>Does Netfix guarantee the lowest quotation?</summary>
+            <p>No. Our role is to support sourcing and quotation coordination. The lowest price may not always represent the most suitable overall offer.</p>
+          </details>
+          <details>
+            <summary>Can Netfix source specialist or overseas manufacturers?</summary>
+            <p>Yes. Depending on the requirement, we can explore specialist suppliers and overseas manufacturing options, including China-based manufacturers.</p>
+          </details>
+          <details>
+            <summary>How can a vendor join the Netfix network?</summary>
+            <p>Vendors can complete the registration form and provide their company details, service categories and capabilities for future opportunity matching.</p>
+          </details>
+          <details>
+            <summary>Is the future AI platform already available?</summary>
+            <p>No. The AI features shown on this website describe Netfix Solutions' future development direction.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta">
           <div>
-            <div class="kicker">For businesses</div>
-            <h3>Need suitable vendors for a project?</h3>
-            <p>Submit your requirement and Netfix Solutions will follow up for the information needed to begin sourcing.</p>
+            <span class="eyebrow" style="color:#ff9a3d">Start a Conversation</span>
+            <h2>Have a requirement that needs the right vendor?</h2>
+            <p>Submit your RFQ or contact Rail to discuss the sourcing support you need.</p>
           </div>
-          <div><a class="btn btn-orange" href="https://forms.gle/6rWANFNc2TdzJkvf7" target="_blank" rel="noopener">Submit your RFQ</a></div>
-        </article>
-        <article class="action-card vendor">
-          <div>
-            <div class="kicker">For vendors</div>
-            <h3>Grow with the Netfix vendor network</h3>
-            <p>Introduce your capabilities, services and certifications so we can contact you when suitable RFQ opportunities arise.</p>
+          <div class="cta-actions">
+            <a class="btn btn-light" href="https://forms.gle/6rWANFNc2TdzJkvf7" target="_blank" rel="noopener">Submit an RFQ</a>
+            <a class="btn btn-outline" href="mailto:admin@netfixsolutions.sg">Email Netfix</a>
+            <a class="btn btn-outline" href="https://wa.me/6597934402" target="_blank" rel="noopener">WhatsApp Rail</a>
           </div>
-          <div><a class="btn btn-navy" href="https://forms.gle/eLtNR5zHBTmCH3nh7" target="_blank" rel="noopener">Join as a vendor</a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-box">
-        <div>
-          <div class="kicker">Contact Netfix Solutions</div>
-          <h2>Start with your next sourcing requirement</h2>
-          <p>Tell us what you need. We will contact you to understand the scope and discuss the next step.</p>
-          <div class="hero-actions">
-            <a class="btn btn-orange" href="https://wa.me/6597934402?text=Hello%20Netfix%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20vendor%20sourcing%20requirement." target="_blank" rel="noopener">WhatsApp us</a>
-            <a class="btn btn-light" href="mailto:admin@netfixsolutions.sg?subject=Enquiry%20to%20Netfix%20Solutions">Email us</a>
-          </div>
-        </div>
-        <div class="contact-list">
-          <a href="mailto:admin@netfixsolutions.sg">admin@netfixsolutions.sg</a>
-          <a href="tel:+6597934402">+65 9793 4402</a>
-          <div>18 Boon Lay Way, #06-143 TradeHub 21, Singapore 609966</div>
-          <div>Singapore UEN: 53527000C</div>
         </div>
       </div>
     </section>
@@ -350,29 +844,65 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img src="netfix-solutions-logo.png" alt="Netfix Solutions logo">
-          <p><strong>Connecting the Right Partners.</strong></p>
-          <p>Industrial procurement support • Vendor sourcing • RFQ coordination</p>
+          <a href="#home" class="brand">
+            <span class="brand-mark">N</span>
+            <span>NETFIX SOLUTIONS<small>CONNECTING THE RIGHT PARTNERS</small></span>
+          </a>
+          <p style="margin-top:18px;max-width:410px">Industrial vendor sourcing, RFQ coordination, quotation comparison and procurement support in Singapore.</p>
+          <p><strong style="color:white">UEN:</strong> 53527000C</p>
         </div>
         <div>
-          <h4>Quick links</h4>
+          <h4>Company</h4>
+          <a href="#founder">About Rail</a>
           <a href="#services">Services</a>
           <a href="#industries">Industries</a>
-          <a href="#process">How it works</a>
-          <a href="#future">Digital roadmap</a>
+          <a href="#future">Future Platform</a>
         </div>
         <div>
-          <h4>Get started</h4>
+          <h4>Get Started</h4>
           <a href="https://forms.gle/6rWANFNc2TdzJkvf7" target="_blank" rel="noopener">Submit an RFQ</a>
-          <a href="https://forms.gle/eLtNR5zHBTmCH3nh7" target="_blank" rel="noopener">Vendor registration</a>
-          <a href="mailto:admin@netfixsolutions.sg">Email Netfix</a>
+          <a href="https://forms.gle/eLtNR5zHBTmCH3nh7" target="_blank" rel="noopener">Join as a Vendor</a>
+          <a href="https://wa.me/6597934402" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:admin@netfixsolutions.sg">admin@netfixsolutions.sg</a>
+          <a href="tel:+6597934402">+65 9793 4402</a>
+          <p>Singapore</p>
         </div>
       </div>
-      <div class="legal">
-        <span>© 2026 Netfix Solutions. All rights reserved.</span>
-        <span>Vendor appointment remains subject to the client's evaluation, approval and contractual requirements.</span>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Netfix Solutions. All rights reserved.</span>
+        <span>Connecting the Right Partners.</span>
       </div>
     </div>
   </footer>
+
+  <a class="whatsapp" href="https://wa.me/6597934402?text=Hello%20Rail%2C%20I%20would%20like%20to%20ask%20about%20Netfix%20Solutions." target="_blank" rel="noopener" aria-label="Contact Rail on WhatsApp">✆</a>
+
+  <script>
+    const header = document.getElementById('header');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuBtn.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
