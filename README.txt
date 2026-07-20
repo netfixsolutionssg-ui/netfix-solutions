@@ -1,8 +1,6 @@
-NETFIX SOLUTIONS WEBSITE V4
+NETFIX SOLUTIONS WEBSITE V5 — POLISHED MOBILE VERSION
 
-This version is made for your current GitHub layout.
-
-Upload these files directly into the MAIN/root folder:
+Upload these files directly to the GitHub repository root:
 - index.html
 - netfix-logo.png
 - netfix-logo.webp
@@ -11,14 +9,17 @@ Upload these files directly into the MAIN/root folder:
 - robots.txt
 - sitemap.xml
 
-No assets folder is needed.
+Keep your existing CNAME file.
 
-On GitHub:
-1. Upload all files to the repository root.
-2. Replace the old files.
-3. Keep the existing CNAME file.
-4. Commit changes.
-5. Wait 1–5 minutes.
-6. Open https://netfixsolutions.sg in an incognito tab.
+Main improvements:
+- Smaller, better-balanced mobile logo
+- Bright orange 'made simple.' text with reliable contrast
+- Improved mobile spacing and hero height
+- Cleaner CTA and WhatsApp button sizing
+- More refined navy/orange branding
+- Better overall visual hierarchy
 
-Do not delete CNAME.
+After uploading:
+1. Commit the changes.
+2. Wait 2–5 minutes.
+3. Open https://netfixsolutions.sg in an incognito tab.
