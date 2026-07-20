@@ -15,6 +15,7 @@
   <link rel="icon" type="image/png" href="favicon-64.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preload" as="image" href="netfix-logo.webp">
+  <link rel="preload" as="image" href="rail-name-card.webp">
 
   <style>
     :root{
@@ -293,29 +294,80 @@
     .compare li{display:flex;gap:12px;margin:14px 0}
     .compare li span{color:var(--orange);font-weight:900}
 
-    .founder{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:stretch}
-    .founder-card{
-      min-height:440px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      padding:34px;
+
+    .founder{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:46px;
+      align-items:center;
+    }
+    .namecard-wrap{
+      position:relative;
+      padding:14px;
       border-radius:28px;
-      color:#fff;
       background:
-        radial-gradient(circle at 82% 14%,rgba(255,115,0,.24),transparent 26%),
-        linear-gradient(155deg,#061426,#123d6f);
+        linear-gradient(135deg,rgba(255,115,0,.18),transparent 38%),
+        linear-gradient(145deg,#061426,#123d6f);
       box-shadow:var(--shadow);
+      overflow:hidden;
     }
-    .founder-initial{
-      width:84px;height:84px;
-      display:grid;place-items:center;
-      border-radius:24px;
-      margin-bottom:auto;
-      background:linear-gradient(135deg,var(--orange),var(--orange-2));
-      font-size:2rem;font-weight:950;
+    .namecard-wrap::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.14);
     }
-    .founder-card p{color:#b9c7d8}
+    .namecard-image{
+      width:100%;
+      height:auto;
+      border-radius:18px;
+      background:#fff;
+      box-shadow:0 18px 42px rgba(0,0,0,.22);
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+    .namecard-wrap:hover .namecard-image{
+      transform:scale(1.012);
+      box-shadow:0 24px 55px rgba(0,0,0,.28);
+    }
+    .namecard-caption{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      padding:14px 8px 2px;
+      color:#d7e3ef;
+      font-size:.84rem;
+    }
+    .namecard-caption strong{color:#ffae68}
+    .founder-role{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin:0 0 20px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#fff1e6;
+      color:#9a4300;
+      font-size:.82rem;
+      font-weight:900;
+    }
+    .founder-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:26px;
+    }
+    .founder-actions .btn-outline-dark{
+      color:var(--navy);
+      border-color:#cdd6e0;
+      background:#fff;
+    }
+    .founder-actions .btn-outline-dark:hover{
+      border-color:var(--orange);
+      color:var(--orange);
+    }
     .quote{
       margin-top:26px;
       padding:24px 28px;
@@ -469,7 +521,11 @@
       .hero-panel{padding:20px;border-radius:22px}
       .grid-3,.grid-4,.workflow,.compare,.roadmap,.footer-grid{grid-template-columns:1fr}
       .cta{padding:32px 22px}
-      .founder-card{min-height:360px}
+      .namecard-wrap{padding:10px;border-radius:22px}
+      .namecard-image{border-radius:14px}
+      .namecard-caption{font-size:.76rem;padding:11px 4px 0}
+      .founder-actions{flex-direction:column}
+      .founder-actions .btn{width:100%}
       .footer-logo{width:210px}
       .whatsapp{
         width:52px;
@@ -692,21 +748,30 @@
 
   <section class="section" id="founder">
     <div class="container founder">
-      <aside class="founder-card">
-        <div class="founder-initial">R</div>
-        <span style="color:#ffae68;font-weight:900">FOUNDER</span>
-        <h2 style="font-size:2.8rem;margin:8px 0">Rail</h2>
-        <p>Netfix Solutions</p>
-      </aside>
+      <a class="namecard-wrap" href="rail-name-card.jpg" target="_blank" rel="noopener" aria-label="Open Rail's Netfix Solutions name card">
+        <img src="rail-name-card.webp" alt="Rail — Founder and Procurement Solutions Director, Netfix Solutions name card" class="namecard-image">
+        <div class="namecard-caption">
+          <span><strong>Rail</strong> · Founder & Procurement Solutions Director</span>
+          <span>Tap to enlarge ↗</span>
+        </div>
+      </a>
 
       <div>
         <span class="eyebrow">Meet the Founder</span>
+        <div class="founder-role">Founder & Procurement Solutions Director</div>
         <h2>Built from real industrial coordination experience.</h2>
         <p class="lead">Netfix Solutions was founded with one clear purpose: to make industrial sourcing and procurement more efficient, transparent and practical for businesses in Singapore.</p>
         <p>Through his experience in facilities and project coordination, Rail saw how much time companies can spend identifying suitable vendors, gathering quotations and managing communication across multiple parties.</p>
-        <p>He established Netfix Solutions to provide a more coordinated approach—helping businesses connect with suitable partners, structure RFQs and review quotations while retaining control over their final procurement decisions.</p>
+        <p>He established Netfix Solutions to provide a more coordinated approach—helping businesses connect with suitable partners, prepare RFQs and review quotations while retaining control over final procurement decisions.</p>
         <p>Rail's long-term vision is to develop Netfix Solutions into a technology-enabled procurement ecosystem supported by AI-assisted vendor matching, quotation comparison and workflow tools.</p>
+
         <div class="quote">“We do not just find vendors. We help businesses connect with the right partners for the right requirement.”</div>
+
+        <div class="founder-actions">
+          <a class="btn btn-primary" href="https://wa.me/6597934402?text=Hello%20Rail%2C%20I%20would%20like%20to%20discuss%20a%20requirement%20with%20Netfix%20Solutions." target="_blank" rel="noopener">WhatsApp Rail</a>
+          <a class="btn btn-outline-dark" href="mailto:admin@netfixsolutions.sg">Email Rail</a>
+          <a class="btn btn-outline-dark" href="https://forms.gle/6rWANFNc2TdzJkvf7" target="_blank" rel="noopener">Submit an RFQ</a>
+        </div>
       </div>
     </div>
   </section>
