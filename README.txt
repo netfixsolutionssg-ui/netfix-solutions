@@ -1,23 +1,16 @@
-NETFIX SOLUTIONS WEBSITE V6 — NAME CARD FOUNDER SECTION
+NETFIX SOLUTIONS WEBSITE V7
 
-This version replaces the temporary orange “R” founder placeholder with Rail’s actual Netfix Solutions name card.
+This version uses one clean white-badge logo in both the header and footer.
 
-Upload these files directly to the ROOT of your GitHub repository:
-- index.html
-- netfix-logo.png
-- netfix-logo.webp
-- favicon.png
-- favicon-64.png
-- rail-name-card.jpg
-- rail-name-card.webp
-- robots.txt
-- sitemap.xml
+Upload to the GitHub repository root:
+index.html
+netfix-logo.png
+netfix-logo.webp
+favicon.png
+favicon-64.png
+rail-name-card.jpg
+rail-name-card.webp
+robots.txt
+sitemap.xml
 
-IMPORTANT:
-- Keep the existing CNAME file unchanged.
-- Upload both rail-name-card files. The website uses the WEBP image and the JPG opens when visitors tap to enlarge it.
-- Replace existing files when GitHub asks.
-
-After committing:
-1. Wait 2–5 minutes.
-2. Open https://netfixsolutions.sg in an incognito/private tab.
+Keep CNAME unchanged. Replace existing files, commit, wait 2–5 minutes, then open the site in an incognito tab.
