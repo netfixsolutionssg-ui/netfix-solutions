@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://netfixsolutions.sg/sitemap.xml
