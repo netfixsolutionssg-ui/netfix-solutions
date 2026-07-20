@@ -1,30 +1,24 @@
-NETFIX SOLUTIONS WEBSITE V3
+NETFIX SOLUTIONS WEBSITE V4
 
-This version includes the official Netfix Solutions logo supplied by Rail.
+This version is made for your current GitHub layout.
 
-FILES
+Upload these files directly into the MAIN/root folder:
 - index.html
+- netfix-logo.png
+- netfix-logo.webp
+- favicon.png
+- favicon-64.png
 - robots.txt
 - sitemap.xml
-- assets/netfix-logo.webp
-- assets/netfix-logo.png
-- assets/favicon.png
-- assets/favicon-64.png
 
-HOW TO UPDATE GITHUB PAGES
-1. Open the GitHub repository currently hosting netfixsolutions.sg.
-2. Upload everything inside this ZIP, including the assets folder.
-3. Replace the existing index.html when asked.
-4. Commit the changes.
-5. Wait around 1–5 minutes and refresh the website.
-6. On mobile, use a private/incognito tab or clear browser cache if the old design remains.
+No assets folder is needed.
 
-IMPORTANT
-Do not upload only index.html. The assets folder must also be uploaded or the logo will not appear.
+On GitHub:
+1. Upload all files to the repository root.
+2. Replace the old files.
+3. Keep the existing CNAME file.
+4. Commit changes.
+5. Wait 1–5 minutes.
+6. Open https://netfixsolutions.sg in an incognito tab.
 
-CURRENT LINKS
-Client RFQ: https://forms.gle/6rWANFNc2TdzJkvf7
-Vendor registration: https://forms.gle/eLtNR5zHBTmCH3nh7
-Email: admin@netfixsolutions.sg
-WhatsApp: +65 9793 4402
-UEN: 53527000C
+Do not delete CNAME.
